@@ -1,0 +1,35 @@
+proc sql;
+CREATE TABLE WORK.SAS_XPTO AS 
+	SELECT A.COL1,
+		   B.COL2
+	FROM TAB_A AS A
+	LEFT JOIN TAB_B AS B
+	ON A.ID = B.ID
+	;
+quit;
+
+proc sql;
+CREATE TABLE WORK.SAS_XPTO AS 
+	SELECT A.COL1,
+		   B.COL2
+	FROM TAB_A AS A
+	LEFT JOIN TAB_B AS B
+	ON A.ID = B.ID
+	WHERE A.DT ....
+	.....
+	;
+quit;
+
+proc sql;
+CREATE TABLE WORK.SAS_XPTO AS 
+	SELECT A.COL1,
+		   SUM(B.COL2) AS SUM_COL2
+	FROM TAB_A AS A
+	LEFT JOIN TAB_B AS B
+	ON A.ID = B.ID
+	WHERE A.DT ....
+	.....
+	GROUP BY A.COL1
+	;
+quit;
+
